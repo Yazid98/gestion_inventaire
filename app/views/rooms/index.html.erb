@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rooms</h1>
+
+<table class="table table-bordered">
+  <thead class="table-light">
+    <tr>
+      <th>Nom</th>
+      <th>Description</th>
+      <th colspan="3"> Actions </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rooms.each do |room| %>
+      <tr>
+        <td><%= room.name %></td>
+        <td><%= room.description %></td>
+        <td><%= link_to 'Voir', room, class:"btn btn-primary" %></td>
+        <td><%= link_to 'Modifier', edit_room_path(room), class:"btn btn-warning" %></td>
+        <td><%= link_to 'Supprimer', room, method: :delete, class:"btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nouvel Room', new_room_path, class:"btn btn-secondary" %>

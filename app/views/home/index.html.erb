@@ -1,0 +1,47 @@
+<h1>Page d'acceuil</h1>
+<br>
+<h2> Buildings </h2>
+<table class="table table-bordered">
+    <tbody>
+        <% @buildings.each do |building| %>
+        <tr>
+            <td><%= building.name %></td>
+            <td><%= building.address %></td>
+            <td><%= link_to 'Voir', building, class:"btn btn-primary" %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<h2> Rooms </h2>
+
+<table class="table table-bordered">
+    <tbody>
+        <% @rooms.each do |room| %>
+        <tr>
+            <td><%= room.name %></td>
+            <td><%= room.description %></td>
+            <td><%= link_to 'Voir', room, class:"btn btn-primary" %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<br>
+<h2> Items </h2>
+
+<table class="table table-bordered">
+    <tbody>
+        <% @items.each do |item| %>
+        <tr>
+            <td><%= item.name %></td>
+            <td><%= item.description %></td>
+            <td><%= item.picture %></td>
+            <td><%= item.weight %></td>
+            <td><%= item.length %></td>
+            <td><%= item.storage_detail %></td>
+            <td><%= link_to 'Voir', item, class:"btn btn-primary" %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
